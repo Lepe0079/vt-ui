@@ -9,8 +9,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             res.status(404).json({})
             resolve({})
         }
-
-        searchAlbum({query: search})
+        searchAlbum(search! as string)
         .then((albums) => {
             res.status(200).json(albums)
             resolve(albums)

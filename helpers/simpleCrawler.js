@@ -13,7 +13,7 @@ const Crawler = require("crawler")
  *  }
  * ]
  */
-const searchAlbum = ({query}) => {
+const searchAlbum = (query) => {
     return new Promise((resolve, reject) => {
         let searchCrawler = new Crawler({
             maxConnections:1,
@@ -69,7 +69,7 @@ const searchAlbum = ({query}) => {
  * @param {string} album formatted to vtName/uri
  * @returns 
  */
-const getAlbumData = ({album}) => {
+const getAlbumData = (album) => {
     return new Promise((resolve, reject) => {
         let tracksCrawler = new Crawler({
             maxConnections:1,
@@ -119,7 +119,7 @@ const getAlbumData = ({album}) => {
  * @param {[links]} innerLinks 
  * @returns [final download links]
  */
-const getDownloads = ({innerLinks}) => {
+const getDownloads = (innerLinks) => {
     return new Promise((resolve, reject) => {
         let dlinks = {}
         let counter = 0
