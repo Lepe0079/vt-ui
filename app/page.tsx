@@ -18,14 +18,9 @@ export default function HomePage() {
 
   const handleSubmit = (e:any) => {
     e.preventDefault()
-    fetch(`http://localhost:8080/album/search/${search}`, {
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
+    fetch(`api/search/${search}`)
       .then((res) => res.json())
-      .then((res) => setAlbums([...res.data.cached, ...res.data.remote]))
+      .then((res) => setAlbums(res))
       .catch((err) => console.error(err));
   }
 
