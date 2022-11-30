@@ -1,13 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getAlbumData, getDownloads } from "../../../helpers/simpleCrawler";
-
-interface ITrack {
-    title: string,
-    links: {
-        ref: string,
-        download?: string
-    }
-}
+import { ITrack } from "../../../app/components/types"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const {vtname} = req.query
